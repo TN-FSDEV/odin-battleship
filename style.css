@@ -1,0 +1,130 @@
+body {
+    font-family: sans-serif;
+    background-color: #1e1e1e;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.game-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#ship-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.draggable-ship {
+    display: flex;
+    cursor: grab;
+    opacity: 1;
+}
+
+.draggable-ship.vertical {
+    flex-direction: column;
+}
+
+.draggable-ship.horizontal {
+    flex-direction: row;
+}
+
+.ship-part {
+    width: 30px;
+    height: 30px;
+    background-color: #2980b9;
+    border: 1px solid #1f6391;
+}
+
+.boards {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(10, 30px);
+    grid-template-rows: repeat(10, 30px);
+    gap: 2px;
+    background-color: #2e2e2e;
+    padding: 10px;
+    border: 2px solid #444;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    background-color: #444;
+    border: 1px solid #666;
+    box-sizing: border-box;
+    transition: background-color 0.2s;
+}
+
+.cell.ship {
+    background-color: #2980b9;
+}
+
+.cell.hit {
+    background-color: crimson;
+}
+
+.cell.miss {
+    background-color: #aaa;
+}
+
+.cell.hover-preview {
+    background-color: #555;
+    outline: 2px dashed #999;
+}
+
+.controls {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+    border: 1px solid #777;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+#win-banner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    font-size: 32px;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    z-index: 1000;
+    border: 2px solid white;
+    border-radius: 10px;
+    display: none;
+}
